@@ -2,8 +2,8 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from FallenRobot import dispatcher
-from FallenRobot.modules.disable import DisableAbleCommandHandler
+from camillia import dispatcher
+from camillia.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
