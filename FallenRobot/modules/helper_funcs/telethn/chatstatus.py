@@ -1,7 +1,7 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from FallenRobot import DRAGONS
-from FallenRobot.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
+from camillia import DRAGONS
+from camillia.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
 
 
 async def user_is_ban_protected(user_id: int, message):
@@ -43,13 +43,13 @@ async def is_user_admin(user_id: int, chat_id):
     return status
 
 
-async def fallen_is_admin(chat_id: int):
+async def camillia_is_admin(chat_id: int):
     status = False
-    fallen = await telethn.get_me()
+    camillia = await telethn.get_me()
     async for user in telethn.iter_participants(
         chat_id, filter=ChannelParticipantsAdmins
     ):
-        if fallen.id == user.id:
+        if camillia.id == user.id:
             status = True
             break
     return status
