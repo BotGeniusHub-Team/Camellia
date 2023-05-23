@@ -4,8 +4,8 @@ from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 
-from FallenRobot import LOGGER, dispatcher
-from FallenRobot.modules.helper_funcs.chat_status import dev_plus
+from camillia import LOGGER, dispatcher
+from camillia.modules.helper_funcs.chat_status import dev_plus
 
 
 @dev_plus
