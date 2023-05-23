@@ -12,9 +12,9 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown
 
-from FallenRobot import dispatcher
-from FallenRobot.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
-from FallenRobot.modules.helper_funcs.misc import is_module_loaded
+from camillia import dispatcher
+from camillia.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
+from camillia.modules.helper_funcs.misc import is_module_loaded
 
 FILENAME = __name__.rsplit(".", 1)[-1]
 
@@ -22,12 +22,12 @@ FILENAME = __name__.rsplit(".", 1)[-1]
 if is_module_loaded(FILENAME):
     from telegram.ext.dispatcher import run_async
 
-    from FallenRobot.modules.helper_funcs.chat_status import (
+    from camillia.modules.helper_funcs.chat_status import (
         connection_status,
         is_user_admin,
         user_admin,
     )
-    from FallenRobot.modules.sql import disable_sql as sql
+    from camillia.modules.sql import disable_sql as sql
 
     DISABLE_CMDS = []
     DISABLE_OTHER = []
@@ -159,7 +159,7 @@ if is_module_loaded(FILENAME):
         args = context.args
         chat = update.effective_chat
         if len(args) >= 1:
-            disable_module = "FallenRobot.modules." + args[0].rsplit(".", 1)[0]
+            disable_module = "camillia.modules." + args[0].rsplit(".", 1)[0]
 
             try:
                 module = importlib.import_module(disable_module)
@@ -234,7 +234,7 @@ if is_module_loaded(FILENAME):
         chat = update.effective_chat
 
         if len(args) >= 1:
-            enable_module = "FallenRobot.modules." + args[0].rsplit(".", 1)[0]
+            enable_module = "camillia.modules." + args[0].rsplit(".", 1)[0]
 
             try:
                 module = importlib.import_module(enable_module)
