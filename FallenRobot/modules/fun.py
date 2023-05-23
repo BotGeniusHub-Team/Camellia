@@ -6,11 +6,11 @@ from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async
 
-import FallenRobot.modules.fun_strings as fun_strings
-from FallenRobot import dispatcher
-from FallenRobot.modules.disable import DisableAbleCommandHandler
-from FallenRobot.modules.helper_funcs.chat_status import is_user_admin
-from FallenRobot.modules.helper_funcs.extraction import extract_user
+import camillia.modules.fun_strings as fun_strings
+from camillia import dispatcher
+from camillia.modules.disable import DisableAbleCommandHandler
+from camillia.modules.helper_funcs.chat_status import is_user_admin
+from camillia.modules.helper_funcs.extraction import extract_user
 
 GIF_ID = "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE"
 
@@ -68,7 +68,7 @@ def slap(update: Update, context: CallbackContext):
     user_id = extract_user(message, args)
 
     if user_id == bot.id:
-        temp = random.choice(fun_strings.SLAP_FALLEN_TEMPLATES)
+        temp = random.choice(fun_strings.SLAP_camillia_TEMPLATES)
 
         if isinstance(temp, list):
             if temp[2] == "tmute":
