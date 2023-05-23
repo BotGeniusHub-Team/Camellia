@@ -7,10 +7,10 @@ from telegraph import Telegraph, exceptions, upload_file
 from camillia import telethn as tbot
 from camillia.events import register
 
-Anonymous = "camillia"
+
 TMP_DOWNLOAD_DIRECTORY = "./"
 telegraph = Telegraph()
-r = telegraph.create_account(short_name=Anonymous)
+r = telegraph.create_account(short_name="ishikki")
 auth_url = r["auth_url"]
 
 
