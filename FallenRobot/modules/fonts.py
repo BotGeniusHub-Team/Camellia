@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from FallenRobot import pbot as Client
-from FallenRobot.utils.fonts import Fonts
+from camillia import pbot as Client
+from camillia.utils.fonts import Fonts
 
 
 @Client.on_message(filters.command(["font", "fonts"]))
