@@ -1,8 +1,8 @@
 from aiohttp import ClientSession
 from pyrogram import filters
 
-from FallenRobot import pbot
-from FallenRobot.utils.errors import capture_err
+from camillia import pbot
+from camillia.utils.errors import capture_err
 
 
 @pbot.on_message(filters.command("github"))
