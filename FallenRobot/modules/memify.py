@@ -3,8 +3,8 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 
-from FallenRobot import telethn as bot
-from FallenRobot.events import register
+from camillia import telethn as bot
+from camillia.events import register
 
 Credit = "AnonymousBoy1025"
 
@@ -61,7 +61,7 @@ async def drawText(image_path, text):
         fnt = "ariel.ttf"
 
     else:
-        fnt = "./FallenRobot/resources/default.ttf"
+        fnt = "./camillia/resources/default.ttf"
 
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
 
