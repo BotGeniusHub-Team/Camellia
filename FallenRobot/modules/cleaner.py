@@ -9,15 +9,15 @@ from telegram.ext import (
     run_async,
 )
 
-from FallenRobot import ALLOW_EXCL, CustomCommandHandler, dispatcher
-from FallenRobot.modules.disable import DisableAbleCommandHandler
-from FallenRobot.modules.helper_funcs.chat_status import (
+from camillia import ALLOW_EXCL, CustomCommandHandler, dispatcher
+from camillia.modules.disable import DisableAbleCommandHandler
+from camillia.modules.helper_funcs.chat_status import (
     bot_can_delete,
     connection_status,
     dev_plus,
     user_admin,
 )
-from FallenRobot.modules.sql import cleaner_sql as sql
+from camillia.modules.sql import cleaner_sql as sql
 
 CMD_STARTERS = ("/", "!") if ALLOW_EXCL else "/"
 BLUE_TEXT_CLEAN_GROUP = 13
