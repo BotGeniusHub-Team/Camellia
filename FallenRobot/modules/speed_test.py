@@ -2,9 +2,9 @@ import speedtest
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
 
-from FallenRobot import DEV_USERS, dispatcher
-from FallenRobot.modules.disable import DisableAbleCommandHandler
-from FallenRobot.modules.helper_funcs.chat_status import dev_plus
+from camillia import DEV_USERS, dispatcher
+from camillia.modules.disable import DisableAbleCommandHandler
+from camillia.modules.helper_funcs.chat_status import dev_plus
 
 
 def convert(speed):
