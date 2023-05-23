@@ -23,25 +23,25 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-import FallenRobot.modules.sql.chatbot_sql as sql
-from FallenRobot import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher
-from FallenRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from FallenRobot.modules.log_channel import gloggable
+import camillia.modules.sql.chatbot_sql as sql
+from camillia import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher
+from camillia.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
+from camillia.modules.log_channel import gloggable
 
 
 @run_async
 @user_admin_no_reply
 @gloggable
-def fallenrm(update: Update, context: CallbackContext) -> str:
+def camilliarm(update: Update, context: CallbackContext) -> str:
     query: Optional[CallbackQuery] = update.callback_query
     user: Optional[User] = update.effective_user
     match = re.match(r"rm_chat\((.+?)\)", query.data)
     if match:
         user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
-        is_fallen = sql.set_fallen(chat.id)
-        if is_fallen:
-            is_fallen = sql.set_fallen(user_id)
+        is_camillia = sql.set_camillia(chat.id)
+        if is_camillia:
+            is_camillia = sql.set_camillia(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"AI_DISABLED\n"
@@ -61,16 +61,16 @@ def fallenrm(update: Update, context: CallbackContext) -> str:
 @run_async
 @user_admin_no_reply
 @gloggable
-def fallenadd(update: Update, context: CallbackContext) -> str:
+def camilliaadd(update: Update, context: CallbackContext) -> str:
     query: Optional[CallbackQuery] = update.callback_query
     user: Optional[User] = update.effective_user
     match = re.match(r"add_chat\((.+?)\)", query.data)
     if match:
         user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
-        is_fallen = sql.rem_fallen(chat.id)
-        if is_fallen:
-            is_fallen = sql.rem_fallen(user_id)
+        is_camillia = sql.rem_camillia(chat.id)
+        if is_camillia:
+            is_camillia = sql.rem_camillia(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"AI_ENABLE\n"
@@ -90,7 +90,7 @@ def fallenadd(update: Update, context: CallbackContext) -> str:
 @run_async
 @user_admin
 @gloggable
-def fallen(update: Update, context: CallbackContext):
+def camillia(update: Update, context: CallbackContext):
     message = update.effective_message
     msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
     keyboard = InlineKeyboardMarkup(
@@ -108,9 +108,9 @@ def fallen(update: Update, context: CallbackContext):
     )
 
 
-def fallen_message(context: CallbackContext, message):
+def camillia_message(context: CallbackContext, message):
     reply_message = message.reply_to_message
-    if message.text.lower() == "fallen":
+    if message.text.lower() == "camillia":
         return True
     elif BOT_USERNAME in message.text.upper():
         return True
@@ -125,12 +125,12 @@ def chatbot(update: Update, context: CallbackContext):
     message = update.effective_message
     chat_id = update.effective_chat.id
     bot = context.bot
-    is_fallen = sql.is_fallen(chat_id)
-    if is_fallen:
+    is_camillia = sql.is_camillia(chat_id)
+    if is_camillia:
         return
 
     if message.text and not message.document:
-        if not fallen_message(context, message):
+        if not camillia_message(context, message):
             return
         bot.send_chat_action(chat_id, action="typing")
         url = f"https://kora-api.vercel.app/chatbot/2d94e37d-937f-4d28-9196-bd5552cac68b/{BOT_NAME}/Anonymous/message={message.text}"
@@ -149,9 +149,9 @@ __help__ = f"""
 __mod_name__ = "Cʜᴀᴛʙᴏᴛ"
 
 
-CHATBOTK_HANDLER = CommandHandler("chatbot", fallen)
-ADD_CHAT_HANDLER = CallbackQueryHandler(fallenadd, pattern=r"add_chat")
-RM_CHAT_HANDLER = CallbackQueryHandler(fallenrm, pattern=r"rm_chat")
+CHATBOTK_HANDLER = CommandHandler("chatbot", camillia)
+ADD_CHAT_HANDLER = CallbackQueryHandler(camilliaadd, pattern=r"add_chat")
+RM_CHAT_HANDLER = CallbackQueryHandler(camilliarm, pattern=r"rm_chat")
 CHATBOT_HANDLER = MessageHandler(
     Filters.text
     & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!") & ~Filters.regex(r"^\/")),
