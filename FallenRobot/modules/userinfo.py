@@ -18,8 +18,8 @@ from telethon import events
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
-import FallenRobot.modules.sql.userinfo_sql as sql
-from FallenRobot import (
+import camillia.modules.sql.userinfo_sql as sql
+from camillia import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
@@ -29,14 +29,14 @@ from FallenRobot import (
     WOLVES,
     dispatcher,
 )
-from FallenRobot import telethn as FallenTelethonClient
-from FallenRobot.__main__ import STATS, TOKEN, USER_INFO
-from FallenRobot.modules.disable import DisableAbleCommandHandler
-from FallenRobot.modules.helper_funcs.chat_status import sudo_plus
-from FallenRobot.modules.helper_funcs.extraction import extract_user
-from FallenRobot.modules.sql.afk_sql import check_afk_status, is_afk
-from FallenRobot.modules.sql.global_bans_sql import is_user_gbanned
-from FallenRobot.modules.sql.users_sql import get_user_num_chats
+from camillia import telethn as camilliaTelethonClient
+from camillia.__main__ import STATS, TOKEN, USER_INFO
+from camillia.modules.disable import DisableAbleCommandHandler
+from camillia.modules.helper_funcs.chat_status import sudo_plus
+from camillia.modules.helper_funcs.extraction import extract_user
+from camillia.modules.sql.afk_sql import check_afk_status, is_afk
+from camillia.modules.sql.global_bans_sql import is_user_gbanned
+from camillia.modules.sql.users_sql import get_user_num_chats
 
 
 def no_by_per(totalhp, percentage):
@@ -159,7 +159,7 @@ def get_id(update: Update, context: CallbackContext):
             )
 
 
-@FallenTelethonClient.on(
+@camilliaTelethonClient.on(
     events.NewMessage(
         pattern="/ginfo ", from_users=(TIGERS or []) + (DRAGONS or []) + (DEMONS or [])
     )
@@ -319,10 +319,10 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "ʜᴇᴀʟᴛʜ", url="https://t.me/FallenAssociation/7"
+                                "ʜᴇᴀʟᴛʜ", url="https://t.me/camilliaAssociation/7"
                             ),
                             InlineKeyboardButton(
-                                "ᴅɪꜱᴀꜱᴛᴇʀ", url="https://t.me/FallenAssociation/8"
+                                "ᴅɪꜱᴀꜱᴛᴇʀ", url="https://t.me/camilliaAssociation/8"
                             ),
                         ],
                     ]
