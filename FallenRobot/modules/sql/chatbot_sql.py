@@ -2,41 +2,41 @@ import threading
 
 from sqlalchemy import Column, String
 
-from FallenRobot.modules.sql import BASE, SESSION
+from camillia.modules.sql import BASE, SESSION
 
 
-class FallenChats(BASE):
-    __tablename__ = "fallen_chats"
+class camilliaChats(BASE):
+    __tablename__ = "camillia_chats"
     chat_id = Column(String(14), primary_key=True)
 
     def __init__(self, chat_id):
         self.chat_id = chat_id
 
 
-FallenChats.__table__.create(checkfirst=True)
+camilliaChats.__table__.create(checkfirst=True)
 INSERTION_LOCK = threading.RLock()
 
 
-def is_fallen(chat_id):
+def is_camillia(chat_id):
     try:
-        chat = SESSION.query(FallenChats).get(str(chat_id))
+        chat = SESSION.query(camilliaChats).get(str(chat_id))
         return bool(chat)
     finally:
         SESSION.close()
 
 
-def set_fallen(chat_id):
+def set_camillia(chat_id):
     with INSERTION_LOCK:
-        fallenchat = SESSION.query(FallenChats).get(str(chat_id))
-        if not fallenchat:
-            fallenchat = FallenChats(str(chat_id))
-        SESSION.add(fallenchat)
+        camilliachat = SESSION.query(camilliaChats).get(str(chat_id))
+        if not camilliachat:
+            camilliachat = camilliaChats(str(chat_id))
+        SESSION.add(camilliachat)
         SESSION.commit()
 
 
-def rem_fallen(chat_id):
+def rem_camillia(chat_id):
     with INSERTION_LOCK:
-        fallenchat = SESSION.query(FallenChats).get(str(chat_id))
-        if fallenchat:
-            SESSION.delete(fallenchat)
+        camilliachat = SESSION.query(camilliaChats).get(str(chat_id))
+        if camilliachat:
+            SESSION.delete(camilliachat)
         SESSION.commit()
