@@ -616,7 +616,7 @@ Group admins/group owners do not need these commands.
  ❍ /gbanlist*:* Outputs a list of gbanned users
 
 *Global Blue Text*
- ❍ /gignoreblue*:* <word>*:* Globally ignore bluetext cleaning of saved word across Anonymous Robot.
+ ❍ /gignoreblue*:* <word>*:* Globally ignore bluetext cleaning of saved word across Ishikki's Robot.
  ❍ /ungignoreblue*:* <word>*:* Remove said command from global cleaning list
 
 *Heroku Settings*
