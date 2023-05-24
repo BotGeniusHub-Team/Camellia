@@ -142,7 +142,6 @@ else:
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 
-
 updater = tg.Updater(token=TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("camillia", API_ID, API_HASH)
 
