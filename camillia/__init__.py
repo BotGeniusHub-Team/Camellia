@@ -143,9 +143,9 @@ DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 
 updater = tg.Updater(token=TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("camillia", API_ID, API_HASH)
+telethn = TelegramClient("cami", API_ID, API_HASH)
 
-pbot = Client("camillia", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("cami", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
 print("[INFO]: Getting Bot Info...")
