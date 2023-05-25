@@ -63,8 +63,4 @@ async def paste_func(_, message):
 
 
 __mod_name__ = "Pᴀsᴛᴇ​"
-__help__ = """
- Pastes the given file and shows you the result
 
- ❍ /paste *:* Reply to a text file
- """
