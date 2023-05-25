@@ -11,7 +11,7 @@ from telegram import (
     ParseMode,
     Update,
 )
-from telegram.ext import CallbackContext
+from telegram.ext import CallbackContext, run_async
 
 from camillia import dispatcher
 from camillia.modules.disable import DisableAbleCommandHandler
@@ -176,6 +176,7 @@ def extract_arg(message: Message):
     return reply.text if reply is not None else None
 
 
+@run_async
 def airing(update: Update, context: CallbackContext):
     message = update.effective_message
     search_str = extract_arg(message)
@@ -199,6 +200,7 @@ def airing(update: Update, context: CallbackContext):
     update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
 
 
+@run_async
 def anime(update: Update, context: CallbackContext):
     message = update.effective_message
     search = extract_arg(message)
@@ -273,6 +275,7 @@ def anime(update: Update, context: CallbackContext):
             )
 
 
+@run_async
 def character(update: Update, context: CallbackContext):
     message = update.effective_message
     search = extract_arg(message)
@@ -307,6 +310,7 @@ def character(update: Update, context: CallbackContext):
             )
 
 
+@run_async
 def manga(update: Update, context: CallbackContext):
     message = update.effective_message
     search = extract_arg(message)
@@ -374,6 +378,7 @@ def manga(update: Update, context: CallbackContext):
             )
 
 
+@run_async
 def upcoming(update: Update, context: CallbackContext):
     jikan = jikanpy.jikan.Jikan()
     upcomin = jikan.top("anime", page=1, subtype="upcoming")
@@ -433,6 +438,7 @@ def site_search(update: Update, context: CallbackContext, site: str):
         )
 
 
+@run_async
 def kaizoku(update: Update, context: CallbackContext):
     site_search(update, context, "kaizoku")
 
@@ -478,13 +484,13 @@ __help__ = """
 """
 
 
-ANIME_HANDLER = DisableAbleCommandHandler("anime", anime, run_async=True)
-AIRING_HANDLER = DisableAbleCommandHandler("airing", airing, run_async=True)
-CHARACTER_HANDLER = DisableAbleCommandHandler("character", character, run_async=True)
-MANGA_HANDLER = DisableAbleCommandHandler("manga", manga, run_async=True)
+ANIME_HANDLER = DisableAbleCommandHandler("anime", anime)
+AIRING_HANDLER = DisableAbleCommandHandler("airing", airing)
+CHARACTER_HANDLER = DisableAbleCommandHandler("character", character)
+MANGA_HANDLER = DisableAbleCommandHandler("manga", manga)
 ##USER_HANDLER = DisableAbleCommandHandler("user", user, run_async=True)
-UPCOMING_HANDLER = DisableAbleCommandHandler("upcoming", upcoming, run_async=True)
-KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku, run_async=True)
+UPCOMING_HANDLER = DisableAbleCommandHandler("upcoming", upcoming)
+KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku)
 ##KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo, run_async=True)
 
 dispatcher.add_handler(ANIME_HANDLER)
