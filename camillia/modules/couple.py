@@ -75,10 +75,10 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
         await message.reply_text(e)
 
 
-__help__ = """
-Choose couples in your chat
-
- ❍ /couple *:* Choose 2 users and send their name as couples in your chat.
-"""
+#__help__ = """
+#Choose couples in your chat
+#
+# ❍ /couple *:* Choose 2 users and send their name as couples in your chat.
+#"""
 
 __mod_name__ = "Cᴏᴜᴘʟᴇ"
