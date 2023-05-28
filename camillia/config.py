@@ -9,12 +9,12 @@ class Config(object):
 
     DATABASE_URL = "postgres://pktttuoh:1LPQQKhy2mpOES27_qF-zAvbUTnEhkAT@balarama.db.elephantsql.com/pktttuoh"  # A sql database url from elephantsql.com
 
-    EVENT_LOGS = ()  # Event logs channel to note down important bot level events
+    EVENT_LOGS = (-1001596651023)  # Event logs channel to note down important bot level events
 
     MONGO_DB_URI = "mongodb+srv://sonu55:sonu55@cluster0.vqztrvk.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mongodb.com
 
     # Telegraph link of the image which will be shown at start command.
-    START_IMG = "https://te.legra.ph/file/40eb1ed850cdea274693e.jpg"
+    START_IMG = "https://graph.org/file/692621a2c3d32788c876b.jpg"
 
     SUPPORT_CHAT = "MissCamelliaUpdate"  # Your Telegram support group chat username where your users will go and bother you
 
