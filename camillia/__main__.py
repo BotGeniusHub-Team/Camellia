@@ -72,27 +72,27 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-────「 [Camillia](https://t.me/gfhfdfhd) 」────
+────「 [Miss Camillia](https://t.me/MissCamelliaUpdate) 」────
 *Hola* {},
 
 *I'm* {} !
 ➛ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-❍ Uptime: {}
-❍ {} Users, Across {} Chats.
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-➛ Try The Guidelines Button Below To Know My Abilities
+✧━━━━━▣✧❅✦❅✧▣━━━━━✧
+❍ ᴜᴘᴛɪᴍᴇ: {}
+❍ {} ᴜsᴇʀs, ᴀᴄʀᴏss {} ᴄʜᴀᴛs.
+✧━━━━━▣✧❅✦❅✧▣━━━━━✧
+➠ ᴛʀʏ ᴛʜᴇ ɢᴜɪᴅᴇʟɪɴᴇs ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
+            text="+ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ +",
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         ),
     ],
     [
-        InlineKeyboardButton(text="GuideLines", callback_data="help_back"),
+        InlineKeyboardButton(text="Gᴜɪᴅᴇʟɪɴᴇs", callback_data="help_back"),
     ]
 ]
 
