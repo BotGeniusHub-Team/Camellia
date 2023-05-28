@@ -5,22 +5,22 @@ class Config(object):
     API_ID = 6
     API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
 
-    CASH_API_KEY = ""  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
+    CASH_API_KEY = "PRPSG4AY3Q3H0QG0"  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
 
-    DATABASE_URL = ""  # A sql database url from elephantsql.com
+    DATABASE_URL = "postgres://pktttuoh:1LPQQKhy2mpOES27_qF-zAvbUTnEhkAT@balarama.db.elephantsql.com/pktttuoh"  # A sql database url from elephantsql.com
 
     EVENT_LOGS = ()  # Event logs channel to note down important bot level events
 
-    MONGO_DB_URI = ""  # Get ths value from cloud.mongodb.com
+    MONGO_DB_URI = "mongodb+srv://sonu55:sonu55@cluster0.vqztrvk.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mongodb.com
 
     # Telegraph link of the image which will be shown at start command.
     START_IMG = "https://te.legra.ph/file/40eb1ed850cdea274693e.jpg"
 
-    SUPPORT_CHAT = "DevilsHeavenMF"  # Your Telegram support group chat username where your users will go and bother you
+    SUPPORT_CHAT = "MissCamelliaUpdate"  # Your Telegram support group chat username where your users will go and bother you
 
-    TOKEN = ""  # Get bot token from @BotFather on Telegram
+    TOKEN = "5876546515:AAE0vVvCy6ucPjSc4oS0gECtmjAUmkP9tuo"  # Get bot token from @BotFather on Telegram
 
-    TIME_API_KEY = ""  # Get this value from https://timezonedb.com/api
+    TIME_API_KEY = "S3J6EISOC17L"  # Get this value from https://timezonedb.com/api
 
     OWNER_ID = 5030730429  # User id of your telegram account (Must be integer)
 
