@@ -1,8 +1,8 @@
 import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
-from telegram.ext import CallbackContext, CommandHandler
+from telegram.ext import CallbackContext, CommandHandler, run_async
 
-from NekoRobot import TOKEN, NEKO_PTB
+from camillia import TOKEN, dispatcher
 
 url = "https://google-reverse-image-api.vercel.app/reverse"
 
@@ -41,6 +41,6 @@ def reverse(update: Update, context: CallbackContext):
 
 
 reverse_cmd = CommandHandler(
-    ["grs", "reverse", "pp", "p", "P"], reverse, run_async=True
+    ["grs", "reverse", "pp", "p", "P"], reverse
 )
-NEKO_PTB.add_handler(reverse_cmd)
+dispatcher.add_handler(reverse_cmd)
